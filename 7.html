@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>7 task</title>
+    </head>
+    <body>
+        <script>
+            let obj = createHolder(5);
+            console.log(obj.getValue());
+            obj.setValue(2);
+            console.log(obj.getValue());
+            function createHolder(initVal) {
+                return {
+                    currentValue: initVal,
+                    getValue: function() {
+                        return this.currentValue;
+                    },
+                    setValue: function(val) {
+                        this.currentValue = val;
+                    },
+                }
+            }
+        </script>
+    </body>
+</html>

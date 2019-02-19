@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>1 task</title>
+    </head>
+    <body>
+        <input type="number" id="sheepCountInput" />
+        <button type="button" onClick="printSheeps()">Send</button>
+        <p id="sheepsLabel"></p>
+        <script>
+            function printSheeps() {
+                const sheepCount = document.getElementById('sheepCountInput').value;
+                const sheepLabel = document.getElementById('sheepsLabel');
+                let resultText = '';
+                for(let i = 1; i <= sheepCount; i++) {
+                   resultText += `${i} sheep...`;
+                }
+                sheepLabel.appendChild(document.createTextNode(resultText));
+                sheepLabel.appendChild(document.createElement('br'));
+            }
+        </script>
+    </body>
+</html>

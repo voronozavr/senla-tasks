@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>5 task</title>
+    </head>
+    <body>
+        <script>
+            getLowerestIndex([1,2,3,4], 1.5);
+            function getLowerestIndex(arr, number) {
+                arr.push(number);
+                arr.sort(compareNumbers);
+                for(let i = 0; i < arr.length; i++) {
+                    if(arr[i] === number) {
+                        console.log(i);
+                        break;
+                    }
+                }
+            }
+            function compareNumbers(a, b) {
+                console.log(a - b)
+                return a - b;
+            }
+        </script>
+    </body>
+</html>

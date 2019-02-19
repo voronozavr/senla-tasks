@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>3 task</title>
+    </head>
+    <body>
+        <input type="text" id="wordsInput" />
+        <button type="button" onClick="getShortest()">Send</button>
+        <p id="resultLabel"></p>
+        <script>
+            function getShortest() {
+                const wordsString = document.getElementById('wordsInput').value;
+                const wordsArray = wordsString.replace(/\s+/g,' ').trim().split(' ');
+                const shortest = (a, b) => a.length <= b.length ? a : b;
+                const shortestLength = wordsArray.reduce(shortest).length;
+                document.getElementById('resultLabel').innerHTML = 
+                    `The shortest length of the word: ${shortestLength}`;
+            }
+        </script>
+    </body>
+</html>

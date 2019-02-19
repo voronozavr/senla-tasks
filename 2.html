@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>2 task</title>
+    </head>
+    <body>
+        <input type="number" min="0" max="30" id="arraySizeInput" />
+        <button type="button" onClick="printArray()">Send</button>
+        <p id="colorArrayLabel"></p>
+        <script>
+            function printArray() {
+                const arraySize = document.getElementById('arraySizeInput').value;
+                const arrayLabel = document.getElementById('colorArrayLabel');
+                arrayLabel.innerHTML = '';
+                for(let i = 0; i < arraySize; i++) {
+                    for(let j = 0; j < arraySize; j++) {
+                        let canvas = createCanvas();
+                        arrayLabel.appendChild(canvas);
+                    }
+                    arrayLabel.appendChild(document.createElement('br'));
+                }
+            }
+            function createCanvas() {
+                let canvas = document.createElement('canvas');
+                const ctx = canvas.getContext("2d");
+                canvas.width = 50;
+                canvas.height = 25;
+                ctx.fillStyle = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+                ctx.fillRect(10, 10, canvas.width, canvas.height);
+                return canvas;
+            }
+            function getRandomColor() {
+                return Math.random() * 256;
+            }
+        </script>
+    </body>
+</html>

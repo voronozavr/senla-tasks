@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>6 task</title>
+    </head>
+    <body>
+        <script>
+            printFrame(['Create', 'a', 'frame'], '+');
+            function printFrame(arr, symbol) {
+                let frameWidth = 0;
+                for(let i = 0; i < arr.length; i++) {
+                    frameWidth = arr[i].length > frameWidth ? arr[i].length : frameWidth;
+                }
+                frameWidth += 4;
+                console.log(symbol.repeat(frameWidth));
+                for(let i = 0; i < arr.length; i++) {
+                    console.log(`${symbol} ${rightFrameHalf(frameWidth, arr[i])} ${symbol}`);
+                }
+                console.log(symbol.repeat(frameWidth));
+            }
+            function rightFrameHalf(frameWidth, word) {
+                let spaces = 0;
+                let resultString = word;
+                spaces = frameWidth - word.length - 4;
+                resultString += ' '.repeat(spaces);
+                return resultString;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>4 task</title>
+    </head>
+    <body>
+        <script>
+            const array = [0, 1, 2, 3, 4, 5];
+            const groupSize = 3;
+            getDimensionalArray(array, groupSize);
+            function getDimensionalArray(arr, groupSize) {
+                let resultArr = [];
+                for(let i = 0; i < arr.length; i += groupSize) {
+                    resultArr.push(arr.slice(i, i + groupSize));
+                }
+                console.log(resultArr);
+            }
+        </script>
+    </body>
+</html>
